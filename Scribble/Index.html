@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Assets/CSS/Style.css">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/eaeb8ae958.css" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <header class="home_main_header">
+            <div class="header_menu_button">
+                <span class="header_menu_bars bar1 bar1_inactive"> </span>
+                <span class="header_menu_bars bar2 bar2_inactive"> </span>
+            </div>
+        </header>
+
+        <section class="menu_wrapper ">
+            <ul class="menu">
+                <li class="links"><a href="Index.html">Home</a></li>
+                <li class="links"><a href="Services.html">Services</a></li>
+                <li class="links"><a href="Contact_us.html">Contact Us</a></li>
+            </ul>
+        </section>
+
+        <section class="intro">
+                <div class="welcome_to">
+                    <h3 class="heading">WELCOME TO</h3>
+                    <img class="icon" src="./Assets/Images/logo1-1.png" alt="" srcset="">
+                </div>
+        
+               <div class="home_banner">
+                    <div class="content">
+                        <h3 class="heading">It all starts at home</h3>
+                        <button>Connect with us today</button>
+                    </div>
+               </div>
+        </section>
+
+        <section class="scribble_finance">
+            <div class="content" >
+                <h3 class="heading">At Scribble Finance,</h3>
+                <p class="description">
+                    At Scribble Finance discover a residential and commercial brokerage that truly cares about its clients.
+                    Your financial health, and that of your business, is at the heart of what we do.
+                    Our brokers are committed to finding a financial solution that fits your unique needs,
+                    and our straightforward, efficient approach will help you reach your goals faster.
+                    From financing your dream home and managing debt to expanding your operation,
+                    we’ll take care of your financial wellbeing so you can live life to the full.
+                </p>
+            </div>
+       </section>
+
+       <section class="home_services">
+            
+                <div class="content">
+                    <h3 class="heading">Our Services</h3>
+                    <ul class="infos_container">
+                        <li class="home_loans info">
+                           
+                                <img width="124.95" height="108.61" src="Assets/Images/i1.jpg" alt="">
+                       
+                            <h3 class="headings"><a class="links" href="">HOME <br> LOANS</a></h3>
+                        </li>
+                        <li  class="commercial_loans info">
+                            
+                                <img width="124.95" height="108.61" src="Assets/Images/i2.jpg" alt="">
+                              
+                            <h3 class="headings"><a class="links" href="">Commercial <br> Loans</a></h3>
+                        </li>
+                       
+                        <li class="car_loans info">
+                            
+                                <img width="124.95" height="108.61" src="Assets/Images/i3.jpg" alt="">
+                            
+                            <h3 class="headings"><a class="links" href="">CAR <br> LOANS</a></h3>
+                        </li>
+                        <li class="debt_collection info">
+                            
+                                <img width="124.95" height="108.61" src="Assets/Images/i5.jpg" alt="">
+                           
+                            <h3 class="headings"><a class="links" href="">DEBT <br> CONSOLIDATION</a></h3>
+                        </li>
+                    </ul>
+                </div>
+            
+       </section>
+
+       <footer>
+        <hr color="#B5DFED">
+        <hr color="#B8B1DB">
+        <hr color="#E9C7D5">
+
+        <div class="contact_info">
+            <img src="Assets/Images/phone1.jpg" alt="">
+            <h4 class="number">1300 468 216</h4>
+            <h4 class="secondry_number"> ABN 70 643 769 920</h4>
+            <a class="privacy_policy" href="privacy_policy.html">View our Privacy Policy</a>
+        </div>
+
+        <div class="social_icons">
+            <div>
+                <a href="">
+                    <i class="fa-brands fa-facebook-f" style="color: white;"></i>
+
+                </a>
+            </div>
+
+            <div >
+                <a href=""><i class="fab fa-instagram" style="color: white;"></i></a>
+            </div>
+       </div>
+       </footer>
+
+    </div>
+    <script>
+        const menu = document.querySelector(".header_menu_button");
+        const menu_bars = document.querySelectorAll(".header_menu_bars");
+        const menu_wrapper = document.querySelector(".menu_wrapper");
+
+        document.querySelectorAll(".links").forEach( element =>{
+    
+        element.addEventListener("click",(event)=>{
+
+        event.target.classList.add("border_white");
+        })
+    });
+    menu.addEventListener("click",()=>{
+    menu_wrapper.classList.toggle("show_active");
+
+    menu.classList.toggle("active");
+   
+    menu_bars[0].classList.toggle("bar1_inactive");
+    menu_bars[0].classList.toggle("bar1_active");
+
+    menu_bars[1].classList.toggle("bar2_inactive");
+    menu_bars[1].classList.toggle("bar2_active");
+});
+
+
+    </script>
+
+    <script src="https://kit.fontawesome.com/eaeb8ae958.js" crossorigin="anonymous"></script>
+    
+    
+</body>
+</html>

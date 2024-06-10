@@ -1,0 +1,1763 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@font-face {
+    font-family: Sebastian_Bobby;
+    src: url("Sebastian_Bobby/Sebastian\ Bobby\ Alt.otf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+   box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    list-style: none;
+    text-decoration: none;
+    color:inherit;
+}
+.home_main_header{
+    position: relative;
+    padding: 55px 0 0;
+    display: flex;
+    justify-content: center;   
+}
+
+.home_main_header .header_menu_button{
+    position: absolute;
+    width: 52px;
+    height: 56.6px;
+    top: -10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 102;
+    padding: 11px 12px 6px 13px;
+    cursor: pointer;
+
+}
+
+.home_main_header .header_menu_bars {
+    width:24px;
+	height:3px;
+    margin:2px 0;
+    border-radius:50px;
+    
+	transition: all .25s ease;
+}
+
+.home_main_header .bar1 {
+    position:relative;
+    transform-origin:top left;
+    background-color:#B9B9B9;
+
+    animation-duration:.35s;
+	animation-timing-function:ease-in-out;
+    animation-iteration-count:1;
+    animation-fill-mode:forwards;
+}
+
+@keyframes top_bar_open {
+	0% { width:24px; transform:rotate(0); }
+    50% { width:0; transform:rotate(0); }
+    51% { width:0; transform:rotate(45deg) translateY(-3px) translateX(3px); }
+	100% { width:24px; transform:rotate(45deg) translateY(-2px) translateX(2px); }
+}
+
+@keyframes top_bar_close {
+    0% { width:24px; transform:rotate(45deg) translateY(-3px) translateX(3px); }
+    50% { width:0; transform:rotate(45deg) translateY(-3px) translateX(3px); }
+    51% { width:0; transform:rotate(0); }
+	100% { width:24px; transform:rotate(0); }
+}
+
+.bar1_active{
+	animation-name:top_bar_open;
+}
+.bar1_inactive{
+	animation-name:top_bar_close;
+}
+
+.home_main_header .bar2 {
+    position:relative;
+    transform-origin:top left;
+    background-color:#B9B9B9;
+    animation-duration:.5s;
+	animation-timing-function:ease-in-out;
+    animation-iteration-count:1;
+    animation-fill-mode:forwards;
+}
+
+@keyframes bottom_bar_open {
+	0% { width:24px; transform:rotate(0); }
+    50% { width:0; transform:rotate(0);  }
+    51% { width:0; transform:rotate(-45deg) translateY(7.5px) translateX(-6px); }
+	100% { width:24px; transform:rotate(-45deg) translateY(7.5px) translateX(-6px); background-color: white;}
+}
+@keyframes bottom_bar_close {
+    0% { width:24px; transform:rotate(-45deg) translateY(8px) translateX(-6px); }
+    50% { width:0; transform:rotate(-45deg) translateY(8px) translateX(-6px); }
+    51% { width:0; transform:rotate(0); }
+	100% { width:24px; transform:rotate(0); }
+}
+
+.bar2_active {
+    animation-name:bottom_bar_open;    
+}
+.bar2_inactive{
+    animation-name:bottom_bar_close;
+}
+
+
+
+section.menu_wrapper{
+    position: fixed;
+    display: block;
+    top: 0;
+    z-index: 100;
+    padding: 40px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility:visible;
+    background-color:rgba(25,25,27,255) ;
+   
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity .5s ease 0s, transform 0s ease .5s;
+}
+
+
+section.menu_wrapper.show_active{
+    opacity: 1;
+    transform: translate(0,0) translateX(0);
+    transition: opacity .5s ease 0s, transform 0s ease 0s;
+    
+}
+
+section.menu_wrapper .menu{
+    min-width: 950px;
+    height: 550px;
+    margin-top: 40px;
+    list-style: none;
+    text-align: center;
+    background-color: #000000;
+}
+section.menu_wrapper .links:first-child{
+    margin-top: 100px ;
+}
+section.menu_wrapper .links{
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 56.5px;
+    margin-left: 21.5px;
+}
+
+
+section.menu_wrapper a{
+    color: white;
+}
+
+section.intro .welcome_to{
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+}
+section.intro .welcome_to .heading{
+    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 4.3px;
+    line-height: 28px;
+    word-spacing: 12px;
+    text-align: center;
+}
+
+section.intro .icon{
+    width: 22%;
+    margin-top: 50px;
+    z-index: 99;
+}
+section.intro .home_banner{
+    padding: 250px 0px 510px;
+  
+    margin-top: -152px;
+    background-image: url("../Images/home-pic-new8.jpg");
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home_banner .content{
+    max-width: 1120px;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+}
+.home_banner .heading{
+    font-family: Sebastian_Bobby;
+    text-align: center;
+    font-size: 181px;
+    font-weight: 100;
+    line-height: 181px;
+    letter-spacing: 1px;
+    word-spacing: 12px;
+}
+.home_banner button{
+    font-size: 22px;
+    line-height: 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    letter-spacing: 4.8px;
+    padding: 25px 55px 25px 55px;
+    background-color: white;
+    border: none;
+    margin-top: -13px;
+    transition: all .3s;
+}
+.home_banner button:hover{
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  animation: scaling alternate .45s infinite ease-in-out;
+
+}
+section.scribble_finance .content{
+    max-width: 1140px;
+    margin: auto;
+    background-color: white;
+    z-index: 99;
+    margin-top: -93px;
+    border: 3px solid #BBE7E2;
+    box-shadow: 13px 13px 0px 0px #BBE7E2;
+    text-align: center;
+    padding: 20px 55px 36px 55px;
+}
+section.scribble_finance .heading{
+    color: #000000;
+    font-family: Sebastian_Bobby;
+    font-size: 119px;
+    word-spacing: 12px;
+    letter-spacing: 1px;
+    line-height: 1;
+    font-weight: 400;
+}
+section.scribble_finance .description{
+    color: #000000;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.8;
+    margin: 11px 0 20px 0;
+
+    letter-spacing: 1.1px;
+}
+
+section.home_services{
+    padding: 75px 0px 55px 0px;
+    max-width: 1140px;
+    margin: auto;
+    text-align: center;
+    text-align: center;
+}
+section.home_services .content{
+    padding: 10px;
+}
+section.home_services .heading{
+    font-family: Sebastian_Bobby;
+    font-size: 124px;
+    font-weight: 400;
+    word-spacing: 12px;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin: 0px 0 0 0;
+
+}
+section.home_services .content ul{
+   display: flex;
+   list-style: none;
+   align-items:flex-end;
+   margin-top: 20px;
+}
+section.home_services .info{
+    width: 25%;
+    padding:10px 10px 7px 10px;
+}
+section.home_services .info img {
+    margin: 0px 0px 1px 0px;
+} 
+section.home_services .info .links{
+    color: #000000;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+  
+    line-height: 26px;
+    text-decoration: none;
+    word-spacing:12px ;
+    
+    letter-spacing: 3.1px;
+}
+footer{
+    padding-bottom: 25px ;
+}
+
+footer hr{
+    width: 100%;
+    height: 4px;
+    margin: 4px 0;
+}
+
+footer .contact_info{
+    padding: 45px 36.5px 15px;
+    text-align: center;
+    font-family: "Montserrat", Sans-serif;
+}
+footer img{
+    margin-bottom: 5px;
+    margin-top: -6px;
+}
+footer .number{
+    font-size: 35px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    line-height: 1;
+    margin-bottom: 18px;
+    margin-top: 1px;
+}
+footer .secondry_number{
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 1.4px;
+    margin-bottom: 3px;
+}
+footer .privacy_policy{
+    font-size: 22px;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+    line-height: 1.4;
+    margin: 1.33em 0;
+}
+
+footer .social_icons{
+    width: 140px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.social_icons div{
+    position: relative;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #312C30;
+    width: 62.4px;
+    height: 62.4px;
+    border-radius: 50%;
+}
+.social_icons div:hover{
+    opacity: .9;
+    cursor: pointer;
+}
+.social_icons a{
+   font-size: 39px;
+}
+
+@keyframes scaling {
+    0%{transform: scale(1);}
+   
+    100%{transform: scale(1.15);}
+}
+
+
+/* --------------------------------Service page CSS ------------------------------------------------------*/
+
+header.secondry_header{
+    display: flex;
+    padding: 23px 10px;
+    background-color: #000000;
+    margin: auto;
+}
+header.secondry_header .services_nav{
+    position: relative;
+    width: 1140px;
+    margin: auto;
+
+}
+header.secondry_header .image_link
+{
+    
+    position: absolute;
+    top:-24px;
+    left: 0px;
+}
+
+header.secondry_header .nav_menu{
+   
+    display: flex;
+    margin-left: auto;
+    padding: 0 10px;
+    width: 100%;
+}
+header.secondry_header .nav_menu .nav_items:first-child{
+    margin-left: auto;
+    
+}
+header.secondry_header .nav_menu .nav_items{
+    padding: 0 38px;
+    color: white;
+    line-height: 1.112;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    
+}
+
+section.our_services{
+    padding: 37px 0px 25px 0px;
+}
+
+section.our_services .content{
+   max-width: 1140px;
+   padding: 10.3px 10px;
+    margin: auto;
+    text-align: center;
+}
+
+section.our_services .heading{
+    color: #000000;
+    font-family: Sebastian_Bobby;
+    font-size: 157px;
+    font-weight: 200;
+    line-height: 1;
+    letter-spacing: -0.02em;
+ 
+}
+section.our_services .description,section.our_services .ending_para{
+    display: block;
+    margin-block-start: .92em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    line-height: 1.8;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1.4px;
+}
+
+
+
+section.home_loans,
+section.car_loans
+{
+    margin-top: 0px;
+    margin-bottom: 25px;
+    padding: 45px 0px 77.2px 0px;
+    background-position: center center;
+    background-size: cover;
+}
+
+section.refinancing{
+    margin-top: 0px;
+    margin-bottom: 25px;
+    padding: 45px 0px 47.2px 0px;
+    background-position: center center;
+    background-size: cover;
+}
+section.personal_loans
+{
+    margin-top: 0px;
+    margin-bottom: 25px;
+    padding: 45px 0px 65.7px 0px;
+    background-position: center center;
+    background-size: cover;
+}
+section.debt_collection{
+    
+    margin-top: 0px;
+    margin-bottom: 25px;
+    padding: 45px 0px 65.2px 0px;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+section.commercial_loans{
+    margin-top: 0px;
+    margin-bottom: 37px;
+    padding: 45px 0px 45px 0px;
+    background-position: center center;
+    background-size: cover;
+}
+
+
+
+
+
+section.home_loans .content ,
+section.car_loans .content,
+section.debt_collection .content,
+section.commercial_loans .content{
+    border-style: solid;
+    border-width: 4px 4px 4px 4px;
+    border-color: #BBE7E2;
+    background-color: white;
+    z-index: 99;
+    text-align: center;
+    width: 46.423%;
+    box-shadow: 0px 0px 6px 0px #959595;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 1px;
+    padding: 55px 50px 35px 50px;
+} 
+
+section.refinancing .content{
+    border-style: solid;
+    border-width: 4px 4px 4px 4px;
+    border-color: #BBE7E2;
+    background-color: white;
+    z-index: 99;
+    text-align: center;
+    width: 46.423%;
+    box-shadow: 0px 0px 6px 0px #959595;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 1px;
+    padding: 55px 50px 35px 50px;
+}
+
+section.personal_loans .content{
+    border-style: solid;
+    border-width: 4.5px 4px 4.5px 4px;
+    border-color: #BBE7E2;
+    background-color: white;
+    z-index: 99;
+    text-align: center;
+    width: 46.423%;
+    box-shadow: 0px 0px 6px 0px #959595;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 1px;
+    padding: 54.5px 50px 35px 50px;
+}
+
+
+section.home_loans .heading,
+section.car_loans .heading
+{
+    display: block;
+    font-size: 1.17em;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 37px;
+    font-weight: 700;
+    margin-top: -14px;
+    line-height: 25px;
+    letter-spacing: 6.1px;
+}
+
+section.refinancing .heading{
+    display: block;
+    font-size: 1.17em;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 37px;
+    font-weight: 700;
+    margin-top: -14px;
+    line-height: 25px;
+    letter-spacing: 6.1px;
+}
+
+section.personal_loans .heading
+{
+    display: block;
+    font-size: 1.17em;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 37px;
+    font-weight: 700;
+    margin-top: -8px;
+    line-height: 25px;
+    letter-spacing: 6.1px;
+}
+section.debt_collection .heading{
+    display: block;
+    font-size: 1.17em;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 37px;
+    font-weight: 700;
+    margin-top: -14px;
+    line-height: 37px;
+    letter-spacing: 6.1px;
+}
+
+section.commercial_loans .heading
+{
+    display: block;
+    font-size: 1.17em;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 37px;
+    font-weight: 700;
+    margin-top: -14px;
+    line-height: 37px;
+    letter-spacing: 6.1px;
+}
+
+
+section.home_loans .icon_image,
+section.car_loans .icon_image
+{
+    box-sizing:border-box;
+    width: 25%;
+    margin: 16px 0 8px 0;
+}
+section.refinancing .icon_image{
+    box-sizing:border-box;
+    width: 25%;
+    margin: 16px 0 23px 0;
+}
+section.personal_loans .icon_image
+{
+    box-sizing:border-box;
+    width: 25%;
+    margin: 22.5px 0 8.5px 0;
+}
+section.debt_collection .icon_image
+{
+    box-sizing:border-box;
+    width: 25%;
+    margin: 16px 0 8px 0;
+}
+section.commercial_loans .icon_image
+{
+    box-sizing:border-box;
+    width: 25%;
+    margin: 16px 0 23px 0;
+}
+
+
+section.home_loans .description,
+section.car_loans .description,
+section.debt_collection .description{
+   
+    color: #000000;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.9px;
+}
+
+section.refinancing  .description{
+    color: #000000;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.9px;
+    margin-bottom: 15px;
+}
+
+section.personal_loans .description{
+    color: #000000;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.9px;
+    margin-bottom: -1px;
+}
+
+section.commercial_loans .description{
+   
+    color: #000000;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.9px;
+    margin-bottom: 15px;
+}
+
+
+
+section.home_loans .content,
+section.car_loans .content,
+section.debt_collection .content{
+    margin-left: auto;
+}
+section.refinancing .content,
+section.personal_loans .content,
+section.commercial_loans .content{
+    margin-right: auto;
+}
+
+
+
+section.home_loans{
+    background-image: url(../images/1-1.jpg);
+    background-position: center center;
+
+}
+section.refinancing{
+    background-image: url(../images/2-2.jpg);
+}
+section.car_loans{
+    background-image: url(../images/3-3.jpg);
+}
+section.personal_loans{
+    background-image: url(../images/4-4.jpg);
+}
+section.debt_collection
+{
+    background-image: url(../images/5-5.jpg);
+}
+section.commercial_loans{
+    background-image: url(../images/7-7.jpg);
+}
+
+            
+/*------------------------------------------Contact_Us----------------------------------------------------*/
+
+section.contact_us{
+    text-align: center;
+    padding: 55px 10px 24px 10px
+}
+section.contact_us .heading{
+    color: #000000;
+    font-family: Sebastian_Bobby;
+    font-size: 183px;
+    font-weight: 200;
+    word-spacing: 31px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+section.contact_us .description{
+    text-align: center;
+    color: #000000;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 21px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 1.8;
+}
+
+section.contact_us .phone_number{
+    font-family: "Montserrat", Sans-serif;
+    font-size: 37px;
+    letter-spacing: 2.5px;
+    color: #000000;
+   
+    margin-top: 44px;
+}
+section.contact_us .mail{
+   
+font-family: "Montserrat", Sans-serif;
+font-size: 24px;
+font-weight: 500;
+letter-spacing: 1.9px;
+color: #000000;
+margin-top: 4px;
+line-height: 1.8;
+}
+
+section.contact_us .phone_number img{
+    margin: 0px 20px -4.5px 0;
+}
+section.contact_us .mail img{
+    margin: 0px 15px -3px 0;
+}
+
+section.contact_us_form{
+    max-width: 1120px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 234px;
+}
+section.contact_us_form form{
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    
+    max-width: 871.5px;
+    margin-right: auto;
+    margin-left: 48px;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 22px;
+    line-height: 1.8;
+}
+section.contact_us_form form div{
+    position: relative;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.border_white{
+    border: 1px dotted white;
+}
+
+.border_black{
+    border: 1px dotted black;
+}
+section.contact_us_form form input,select{
+    
+    right: 0;
+    margin: 10px 0;
+    min-width: 736.99px;
+    padding: 10.0px 14.52px ;
+    font-size: 16px;
+    border-radius: 0px;
+    margin: 5px 0;
+    margin-left: auto;
+    border: 1px solid #818a91;
+    outline: none;
+   
+    
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+section.contact_us_form form .buttons{    
+    margin-left: auto;
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 1;
+    font-size: 15px;
+    padding: 12px 24px;
+    border-radius: 3px;
+}
+
+
+/*---------------------=================================privacy policy============------------------------*/
+
+section.privacy_policy {
+        margin: 98px 0px 0px 0px;
+}
+
+section.privacy_policy .content {
+    max-width: 80%;
+    margin: 0 10%;
+    padding: 0 60px;
+}
+
+section.privacy_policy .content .details
+{
+    margin: 32px 0;
+    max-width:66%;
+    padding: 10px;
+}
+
+section.privacy_policy .content .details .head
+{
+    margin: 40px 0px 20px 0px;
+}
+
+section.privacy_policy .content .details .head .heading
+{
+    color: #000000;
+    font-family: Sebastian_Bobby;
+    font-size: 119px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+section.privacy_policy .content .details .paras 
+{
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
+    color: #7a7a7a;
+    line-height: 1.8;
+    margin: 42px 0 0 0;
+}
+
+section.privacy_policy .content .details .paras p,.paras ul {
+    margin:22px 0px;
+    line-height: 1.8;
+}
+section.privacy_policy .content .details .paras ul{
+    padding-left: 22px;
+}
+section.privacy_policy .content .details .paras ul li{
+    list-style: disc !important;
+}
+
+
+@media only screen and (min-width:1800px) and  (max-width:1920px) {
+ /*===============================----------------------------Home page================----------------------*/
+    section.debt_collection .heading {
+        margin-top: -14px;
+    }
+        section.refinancing .icon_image {
+            box-sizing: border-box;
+            width: 176px;
+            height: 153px;
+            margin: 16px 0 23px 0;
+        }
+        section.personal_loans .icon_image {
+            box-sizing: border-box;
+            width: 176px;
+            height: 153px;
+            margin: 22.5px 0 9px 0;
+        }
+        section.debt_collection .icon_image {
+            box-sizing: border-box;
+            width: 176px;
+            height: 153px;
+            margin: 22px 0 8px 0;
+        }
+        section.debt_collection .icon_image {
+            box-sizing: border-box;
+            width: 176px;
+            height: 153px;
+            margin: 16px 0 8px 0;
+        }
+        section.commercial_loans .icon_image {
+            box-sizing: border-box;
+            width: 22.27%;
+            width: 133px;
+            height: 117px;
+            margin: 16px 0 23px 0;
+        }
+        .icon_image{
+            width: 176px;
+            height: 153px;
+        }
+    
+        section.home_loans .icon_image, section.car_loans .icon_image {
+            box-sizing: border-box;
+            width: 176px;
+            height: 153px;
+            margin: 16px 0 8px 0;
+        }
+        section.refinancing {
+            padding: 45px 0px 45px 0px;
+            
+        }
+    
+        section.debt_collection {
+            padding: 45px 0px 45px 0px;
+        }
+    
+        section.personal_loans {
+            margin-top: 0px;
+            margin-bottom: 25px;
+            padding: 45px 0px 66px 0px;
+            background-position: center center;
+            background-size: cover;
+        }
+        section.home_loans,section.car_loans {
+            padding: 45px 0px 54px 0px;  
+        }
+    
+    }
+
+
+
+   
+
+@media screen and (min-width:768px) and (max-width:900px) {
+
+ /*=========-------------------------------------------Home page----------------===========================-*/
+ 
+ 
+
+ section.intro .icon {
+    width: 22%;
+    margin-top: 25px;
+    z-index: 99;
+} 
+
+ section.intro .home_banner {
+    padding: 250px 0px 510px;
+    margin-top: -152px;
+    background-image: url(../Images/home-pic-new8.jpg);
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+
+
+
+ section.scribble_finance .content {
+    max-width: 1140px;
+    margin: auto;
+    background-color: white;
+    z-index: 99;
+    margin-top: -93px;
+    border: 3px solid #BBE7E2;
+    box-shadow: 13px 13px 0px 0px #BBE7E2;
+    text-align: center;
+    padding: 20px 55px 36px 55px;
+    margin: 50px 0 0 0;
+ }
+
+
+
+ section.home_services .content ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+ section.home_services .info {
+    width: 20%;
+    padding: 10px 10px 7px 10px;
+ }
+ section.home_services .info .links {
+    color: #000000;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 26px;
+    text-decoration: none;
+    word-spacing: 12px;
+    letter-spacing: 3.1px;
+}
+
+/*=========-------------------------------------------SERVICES----------------===========================-*/
+ 
+header.secondry_header .services_nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header.secondry_header .nav_menu {
+    width: 100%;
+    justify-content: space-around;
+    background-color: #F3F3F3;
+    color: black !important;
+    font-weight: 400 !important;
+    border: none;
+}
+header.secondry_header .image_link {
+  
+        max-width: 100%;
+       
+        position:static;
+        top: -24px;
+        left: 50%;
+        margin: auto;
+        
+    
+}
+header.secondry_header .image_link img{
+  
+    width: 181.5px;
+    height: 181.5px;
+    margin: 0px 0px 14px;
+}
+
+
+header.secondry_header {
+    display: flex;
+    padding: 18px 0px 0px;
+    background-color: #000000;
+    margin: auto;
+}
+header.secondry_header .nav_menu .nav_items:first-child {
+    margin-left: 0;
+}
+header.secondry_header .nav_menu .nav_items {
+    color: #000000;
+    width: 33.33%;
+    padding: 11.22px 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0px;
+
+}
+
+section.home_loans .heading, section.car_loans .heading {
+    display: block;
+    font-size: 1.17em;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: -14px;
+    line-height: 1.2;
+    letter-spacing: 6.1px;
+}
+
+section.refinancing .heading {
+    display: block;
+    font-size: 1.17em;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: -14px;
+    line-height: 1.2;
+    letter-spacing: 6.1px;
+}
+
+section.personal_loans .heading {
+    display: block;
+    font-size: 1.17em;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: -8px;
+    line-height: 1.2;
+    letter-spacing: 6.1px;
+}
+
+section.debt_collection .heading {
+    display: block;
+    font-size: 1.17em;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: -14px;
+    line-height: 1.2;
+    letter-spacing: 6.1px;
+}
+
+section.commercial_loans .heading {
+    display: block;
+    font-size: 1.17em;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: -14px;
+    line-height: 37px;
+    letter-spacing: 6.1px;
+}
+
+
+
+
+
+
+section.contact_us_form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+section.contact_us_form form{
+    width: calc(67.153% - 20px);
+    padding: 10px;
+    margin: auto;
+}
+section.contact_us_form form div{
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: calc( 10px/2 );
+    padding-left: calc( 10px/2 );
+    margin-bottom: 10px;
+}
+
+section.contact_us_form form input,select{
+  min-width: 100%;
+  margin: 0;
+    
+}
+
+     section.contact_us {
+        text-align: center;
+        padding: 45px 30px 20px 30px;
+    }
+
+    section.contact_us .heading{
+        font-size: 97px ;
+    }
+    section.contact_us .description {
+        margin: 19px 0px 10px 0px;
+    }
+    section.contact_us .phone_number {
+        font-size: 25px;
+        margin: 41px 0px -3px 0px;
+    }
+    section.contact_us .mail {
+        font-size: 17px;
+        position: relative;
+        margin-left:40px ;
+    }
+    section.contact_us .phone_number img {
+        width: 26.61px;
+        height: 27px;
+       
+    }
+    section.contact_us .mail img {
+        width: 23px;
+        height: 14.02px;
+        margin: 0px 15px -1px 0;
+    }
+
+    section.contact_us_form form{
+        width:calc(100% - 50px);
+        padding: 10px;
+        margin: auto;
+    }
+
+}
+
+ /*=========-------------------------------------------Home page MOBILE RESPONSIVE----------------===========================-*/
+@media screen and (min-width:300px) and (max-width:480px) {
+ /*=========-------------------------------------------Home page----------------===========================-*/
+    section.intro .icon {
+        width: 40%;
+        margin-top: 59px;
+        z-index: 99;
+    }
+    .home_banner .heading {
+        font-family: Sebastian_Bobby;
+        text-align: center;
+        font-size: 145px;
+        font-weight: 100;
+        line-height: 170px;
+        letter-spacing: 1px;
+        word-spacing: 12px;
+    }
+
+    .home_banner button {
+        font-size: 22px;
+        line-height: 22px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        letter-spacing: 4.8px;
+        padding: 25px 35px 25px 35px;
+        background-color: white;
+        border: none;
+        margin-top: 0px;
+        transition: all .3s;
+    }
+
+    section.intro .home_banner {
+        padding: 200px 0px 450px;
+        margin-top: -152px;
+    }
+
+    section.scribble_finance .content {
+        max-width: 80%;
+        margin: auto;
+        background-color: white;
+        z-index: 99;
+        margin-top: -110px;
+        border: 3px solid #BBE7E2;
+        box-shadow: 13px 13px 0px 0px #BBE7E2;
+        text-align: center;
+        padding: 30px 35px 35px 35px;
+    }
+
+    section.scribble_finance .heading {
+        color: #000000;
+        font-family: Sebastian_Bobby;
+        font-size: 90px;
+        word-spacing: 16px;
+        letter-spacing: 1px;
+        line-height: 1;
+        font-weight: 400;
+    }
+
+    section.scribble_finance .description {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.6;
+        margin: 20px 0 20px 0;
+        letter-spacing: 1.1px;
+    }
+
+    section.home_services {
+        padding: 55px 0px 50px 0px;
+       
+    }
+
+
+    section.home_services .heading {
+        font-size: 118px;
+    }
+    section.home_services .info .links {
+        font-size: 16px;
+        letter-spacing: 1.1px;
+    }
+    .info img {
+        width: 65%;
+        height: 65%;
+    }
+
+    footer .number {
+        font-size: 30px;
+        font-weight: 400;
+        letter-spacing: 4px;
+        line-height: 1;
+        margin-bottom: 18px;
+        margin-top: 1px;
+    }
+    footer .secondry_number,.footer .privacy_policy{
+        font-size: 20px;
+    }
+    .fa-brands, .fab {
+        font-weight: 400;
+        font-size: 35px;
+    }
+    .social_icons div {
+     
+        width: 50.4px;
+        height: 50.4px;
+        
+    }
+
+    
+
+    /*=============------------------------------Services page--------------====================================*/
+        header.secondry_header .services_nav {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header.secondry_header .nav_menu {
+            width: 100%;
+            justify-content: space-around;
+            background-color: #F3F3F3;
+            color: black !important;
+            font-weight: 400 !important;
+            border: none;
+        }
+        header.secondry_header .image_link {
+          
+                max-width: 100%;
+               
+                position:static;
+                top: -24px;
+                left: 50%;
+                margin: auto;
+                
+            
+        }
+        header.secondry_header .image_link img{
+          
+            width: 181.5px;
+            height: 181.5px;
+            margin: 0px 0px 14px;
+    }
+
+        
+        header.secondry_header {
+            display: flex;
+            padding: 18px 0px 0px;
+            background-color: #000000;
+            margin: auto;
+        }
+        header.secondry_header .nav_menu .nav_items:first-child {
+            margin-left: 0;
+        }
+        header.secondry_header .nav_menu .nav_items {
+            color: #000000;
+            width: 33.33%;
+            padding: 11.22px 10px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0px;
+   
+        }
+        
+        section.our_services{
+            padding: 37.3px 0px 35px 0px;
+        }
+        section.our_services .heading {
+            font-size: 106px;
+        }
+
+        section.home_loans {
+            padding: 50px 20px 20px 20px;
+     
+        }
+        section.refinancing,section.personal_loans, 
+        section.commercial_loans {
+            padding: 20px 20px 40px 20px;
+        }
+
+        section.debt_collection , section.car_loans {
+            padding: 40px 20px 20px 20px;
+        }
+
+        
+
+        section.home_loans .heading, section.car_loans.heading,
+        section.refinancing .heading,
+        section.personal_loans .heading,
+        section.debt_collection .heading, 
+        section.commercial_loans .heading{
+           
+            font-size: 37px;
+            font-weight: 700;
+            margin-top: -14px;
+            font-size: 20px;
+            line-height: 38px;
+        }
+        section.our_services .description, section.our_services .ending_para {
+         
+            font-size: 20px;
+            font-weight: 400;
+            letter-spacing: 1.4px;
+        }
+
+         section.home_loans .content,
+         section.refinancing .content,
+         section.car_loans .content, 
+         section.personal_loans .content,
+         section.debt_collection .content, 
+         section.commercial_loans .content {
+            width: 100%;
+            margin: auto;
+        }
+
+        section.home_loans .heading,
+         section.refinancing .heading,
+         section.car_loans .heading, 
+         section.personal_loans .heading,
+         section.debt_collection .heading, 
+         section.commercial_loans .heading {
+           font-size: 20px;
+
+    }
+
+    section.car_loans .heading {
+        font-size: 20px;
+        margin-top: -8px;
+    }
+    
+    section.home_loans  .icon_image{
+        margin: 16px 0px 8px 0px;
+        width: 175px ;
+        height: 153px ;
+    }
+    section.refinancing .icon_image{
+        margin: 16px 0px 23px 0px;
+        width: 176px;
+        height: 153px;
+    }
+    section.car_loans  .icon_image{
+        margin: 23px 0px 8px 0px;
+        width: 176px;
+        height: 153px;
+    }
+
+    section.personal_loans  .icon_image{
+        margin: 17.5px 0px 8px 0px;
+        width: 176px;
+        height: 153px;
+    }
+    section.debt_collection  .icon_image{
+        margin: 16px 0px 8px 0px;
+        width: 176px;
+        height: 153px;
+    }
+    section.commercial_loans .icon_image{
+        margin: 16px 0px 23px 0px;
+        width: 133px;
+        height: 117px;
+    }
+    
+    /*===========-----------------------------------Contact Us page============-------------------------------------*/
+
+      section.contact_us_form{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    section.contact_us_form form{
+        width: calc(67.153% - 20px);
+        padding: 10px;
+        margin: auto;
+    }
+    section.contact_us_form form div{
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: calc( 10px/2 );
+        padding-left: calc( 10px/2 );
+        margin-bottom: 10px;
+    }
+
+    section.contact_us_form form input,select{
+      min-width: 100%;
+      margin: 0;
+        
+    }
+
+        section.contact_us {
+            text-align: center;
+            padding: 45px 30px 20px 30px;
+        }
+    
+        section.contact_us .heading{
+            font-size: 97px ;
+        }
+        section.contact_us .description {
+            margin: 19px 0px 10px 0px;
+        }
+        section.contact_us .phone_number {
+            font-size: 25px;
+            margin: 41px 0px -3px 0px;
+        }
+        section.contact_us .mail {
+            font-size: 17px;
+            position: relative;
+            margin-left:40px ;
+        }
+        section.contact_us .phone_number img {
+            width: 26.61px;
+            height: 27px;
+           
+        }
+        section.contact_us .mail img {
+            width: 23px;
+            height: 14.02px;
+            margin: 0px 15px -1px 0;
+        }
+    
+        section.contact_us_form form{
+            width:calc(100% - 50px);
+            padding: 10px;
+            margin: auto;
+        }
+
+
+        /*=============----------------------------------------privacy policy==============--------------------*/
+        
+        
+        section.privacy_policy .content
+        {
+            max-width: calc(100% - (2 * 1rem));
+            margin: 0 22px;
+            padding: 0;
+            
+        }
+
+        
+}
+
+
+
+
+@media only screen and (min-width:300px) and (max-width:457px) {
+    /*==========------------------------------------Home Page==========--------------------------------*/
+        section.home_services .content ul{
+           flex-direction: column;
+            align-items:center;
+           
+         }
+    
+         section.home_services .info{
+            width: 100%;
+           
+        }
+    
+        section.intro .icon{
+            width: 50%;
+            margin-top: 40px;
+        }
+    
+        .home_banner .heading {
+            text-align: center;
+            font-size: 75px;
+            font-weight: 100;
+            line-height: 165px;
+            letter-spacing: 1px;
+            word-spacing: 12px;
+        }
+    
+        .home_banner button {
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 4.8px;
+            padding: 14px;
+          
+         
+        }
+    
+    
+        section.intro .home_banner {
+            padding: 100px 0px 298px;
+            margin-top: -100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+    
+        section.scribble_finance .heading {
+            font-size: 65px;
+            word-spacing: 12px;
+            letter-spacing: 1px;
+            line-height: 1;
+            font-weight: 400;
+        }
+    
+    
+        section.scribble_finance .description {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.8;
+            margin: 10px 0 20px 0;
+        }
+    
+        section.scribble_finance .content {
+            max-width: 350px;
+            margin: auto;
+            background-color: white;
+            margin-top: -93px;
+            padding: 25px 25px 25px 25px;
+        }
+    
+        section.home_services .heading {
+            font-size: 75px;
+            font-weight: 400;
+            word-spacing: 12px;
+            letter-spacing: 1px;
+        }
+    
+        section.home_services .info .links {
+            color: #000000;
+            
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 25.7px;
+            text-decoration: none;
+            letter-spacing: 2.1px;
+        }
+        .info img {
+            width: 30%;
+            height: 30%;
+        }
+        footer .contact_info {
+            padding: 30px 36.5px 30px;
+            text-align: center;
+            
+        }
+        footer .number {
+            font-size: 28px;
+            font-weight: 400;
+            letter-spacing: 4px;
+            line-height: 1;
+            margin-bottom: 18px;
+            margin-top: 1px;
+        }
+        footer .secondry_number,.footer .privacy_policy{
+            font-size: 18px;
+        }
+        .social_icons div {
+            position: relative;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #312C30;
+            width: 45.4px;
+            height: 45.4px;
+            border-radius: 50%;
+        }
+        .fa-brands, .fab {
+            font-weight: 400;
+            font-size: 30px;
+        }
+        .social_icons div {
+         
+            width: 50.4px;
+            height: 50.4px;
+            
+        }
+    
+    /*==============================-------------------------Sevices Page============-------------------------*/
+    
+    header.secondry_header .image_link {
+        width: 100%;
+        text-align: center;
+}
+    header.secondry_header .image_link img{
+        width: 39.607%;
+        height: 39.09%;
+}
+
+section.our_services {
+    padding: 35px 20px;
+}
+
+.icon_image{
+    width: 101.8px !important;
+    height: 88.49px !important;
+}
+
+
+section.home_loans .icon_image{
+    margin: 16px 0px 8px 0px;
+}
+section.car_loans .heading {
+  
+    margin-top: -7px;
+}
+section.personal_loans .heading
+{
+    margin-top: -13.5px;
+}
+
+section.car_loans .icon_image {
+    margin: 22px 0px 8px 0px;
+   
+}
+section.personal_loans .icon_image {
+    margin: 16px 0px 8px 0px;
+}
+section.personal_loans .description {
+    margin-bottom: 0px;
+}
+section.commercial_loans .icon_image {
+    margin: 16px 0px 23px 0px;
+    width: 101.8px !important;
+    height: 89.55px !important;
+}
+
+header.secondry_header .image_link img {
+    width: calc(48.255% - 36px);
+    height: 39.09%;
+}
+
+
+
+/*--------------------------------------------Contact Us Page----------------------------------------------------*/
+    section.contact_us {
+        text-align: center;
+        padding: 45px 20px 20px 20px;
+    }
+    section.contact_us .mail img {
+        position: absolute;
+        left: -45px;
+        bottom: 10px;
+    }
+}
+
